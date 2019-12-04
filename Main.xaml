@@ -1,0 +1,157 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="860,1368.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Excel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Ohjelmistorobotti Make 2.0" sap:VirtualizedContainerService.HintSize="840,1308.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Browser" Name="mainSelain" />
+      <Variable x:TypeArguments="x:String" Name="mainKaudenAlku" />
+      <Variable x:TypeArguments="x:String" Name="mainKaudenLoppu" />
+      <Variable x:TypeArguments="x:String" Name="mainTilikaudenAlku" />
+      <Variable x:TypeArguments="ui:WorkbookApplication" Name="mainExcel" />
+      <Variable x:TypeArguments="x:String" Name="mainExcelTiedostopolku" />
+      <Variable x:TypeArguments="x:Boolean" Name="mainOnkoSelainAuki" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="798,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Aloitus.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="ui:Browser" x:Key="out_Selain">[mainSelain]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_TilikaudenAlku">[mainTilikaudenAlku]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_KaudenAlku">[mainKaudenAlku]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_KaudenLoppu">[mainKaudenLoppu]</OutArgument>
+        <OutArgument x:TypeArguments="ui:WorkbookApplication" x:Key="out_Excel">[mainExcel]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ExcelTiedostopolku">[mainExcelTiedostopolku]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_OnkoSelainAuki">[mainOnkoSelainAuki]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <If Condition="[mainOnkoSelainAuki = True]" sap:VirtualizedContainerService.HintSize="798,1090" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,936" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Ostomyyntireskontra.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:Browser" x:Key="in_Selain">[mainSelain]</InArgument>
+              <OutArgument x:TypeArguments="ui:Browser" x:Key="out_Selain">[mainSelain]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenAlku">[mainKaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenLoppu">[mainKaudenLoppu]</InArgument>
+              <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_Excel">[mainExcel]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Kuitit.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:Browser" x:Key="in_Selain">[mainSelain]</InArgument>
+              <OutArgument x:TypeArguments="ui:Browser" x:Key="out_Selain">[mainSelain]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_TilikaudenAlku">[mainTilikaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenAlku">[mainKaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenLoppu">[mainKaudenLoppu]</InArgument>
+              <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_Excel">[mainExcel]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Palkkakirjanpito.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:Browser" x:Key="in_Selain">[mainSelain]</InArgument>
+              <OutArgument x:TypeArguments="ui:Browser" x:Key="out_Selain">[mainSelain]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenAlku">[mainKaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenLoppu">[mainKaudenLoppu]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_TilikaudenAlku">[mainTilikaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_Excel">[mainExcel]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Kirjanpito.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:Browser" x:Key="in_Selain">[mainSelain]</InArgument>
+              <OutArgument x:TypeArguments="ui:Browser" x:Key="out_Selain">[mainSelain]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_TilikaudenAlku">[mainTilikaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenAlku">[mainKaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenLoppu">[mainKaudenLoppu]</InArgument>
+              <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_Excel">[mainExcel]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Verotus.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenAlku">[mainKaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_KaudenLoppu">[mainKaudenLoppu]</InArgument>
+              <InArgument x:TypeArguments="ui:Browser" x:Key="in_Selain">[mainSelain]</InArgument>
+              <OutArgument x:TypeArguments="ui:Browser" x:Key="out_Selain">[mainSelain]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_TilikaudenAlku">[mainTilikaudenAlku]</InArgument>
+              <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_Excel">[mainExcel]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Lopetus.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_Excel">[mainExcel]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelTiedostopolku">[mainExcelTiedostopolku]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,150.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Chrome-selain ei ole auki tai et ole Netvisoriin kirjautuneena. Avaa selain ja/tai kirjaudu Netvisoriin. Tämän jälkeen käynnistä robotti  uudelleen!&quot;]" TopMost="True" />
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
