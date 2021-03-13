@@ -1,4 +1,5 @@
 # ignored user dependencies
 
-*.local/
-*debug.log
+**/.local
+**/.settings
+debug.log
