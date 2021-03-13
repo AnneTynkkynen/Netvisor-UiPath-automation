@@ -1,0 +1,4 @@
+# ignored user dependencies
+
+*.local/
+*debug.log

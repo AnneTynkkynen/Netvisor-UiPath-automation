@@ -1368,9 +1368,9 @@
     "restore": {
       "projectUniqueName": "Make2.0",
       "projectName": "Make2.0",
-      "projectPath": "C:\\Users\\ATJ\\Desktop\\Koulu\\Opinnaytetyo\\Uipath\\Make2.0\\.local",
+      "projectPath": "C:\\Users\\ATJ\\Documents\\Projektit\\Projektit\\Netvisor-UiPath-automation\\.local",
       "packagesPath": "C:\\Users\\ATJ\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ATJ\\Desktop\\Koulu\\Opinnaytetyo\\Uipath\\Make2.0\\.local"
+      "outputPath": "C:\\Users\\ATJ\\Documents\\Projektit\\Projektit\\Netvisor-UiPath-automation\\.local"
     },
     "frameworks": {
       "net461": {
@@ -1408,14 +1408,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'ExceltoPDFConversionActivities 1.1.6' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
-      "libraryId": "ExceltoPDFConversionActivities"
-    }
-  ]
+  }
 }
